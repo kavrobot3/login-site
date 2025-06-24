@@ -8,7 +8,7 @@
   <input id="pass" type="password" placeholder="Password"><br>
   <button onclick="login()">Login</button>
 
-  <script>
+  <script src="script.js">
     async function login() {
       const res = await fetch("/login", {
         method: "POST",
