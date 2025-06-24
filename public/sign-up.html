@@ -1,0 +1,25 @@
+<!-- public/signup.html -->
+<!DOCTYPE html>
+<html>
+<head><title>Signup</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <h2>Signup</h2>
+  <input id="email" placeholder="Email"><br>
+  <input id="pass" type="password" placeholder="Password"><br>
+  <button onclick="signup()">Signup</button>
+
+  <script>
+    async function signup() {
+      const res = await fetch("/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: document.getElementById("email").value,
+          password: document.getElementById("pass").value
+        })
+      });
+      alert(await res.text());
+    }
+  </script>
+</body>
+</html>
